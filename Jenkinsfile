@@ -10,12 +10,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-		docker.image('tomdai:latest').inside("--entrypoint=''") {
+	      script {
+		docker.image('tomdai').inside("--entrypoint=''") {
 
                   echo 'Testing..'
 	
 		  sh 'flake8'
 		}
+	      }
             }
         }
         stage('Deploy') {

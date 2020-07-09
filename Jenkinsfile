@@ -5,14 +5,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh 'docker build -t test --entrypoint="" -f Dockerfile.build . '
+		sh 'docker build -t tomdai -f Dockerfile.build . '
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+		docker.image('tomdai:latest').inside("--entrypoint=''") {
+
+                  echo 'Testing..'
 	
-		sh 'flake8'
+		  sh 'flake8'
+		}
             }
         }
         stage('Deploy') {

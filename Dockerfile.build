@@ -1,5 +1,7 @@
 from ubuntu:latest
 
+USER root
+
 RUN apt-get update -y
 RUN apt-get install -y build-essential python3 python3-pip
 

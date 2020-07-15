@@ -13,6 +13,7 @@ def tom_is_a_god():
     return 'Tom is the greatest'
 
 @app.route('/blog')
+def blog():
     return render_template("blog.html")
 
 if __name__ == '__main__':

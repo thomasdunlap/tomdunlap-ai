@@ -15,7 +15,7 @@ pipeline {
 
                   echo 'Testing..'
 	
-		  sh 'flake8'
+		  sh 'flake8 --version'
 		}
 	      }
             }

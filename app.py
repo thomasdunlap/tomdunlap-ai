@@ -12,5 +12,8 @@ def home():
 def tom_is_a_god():
     return 'Tom is the greatest'
 
+@app.route('/blog')
+    return render_template("blog.html")
+
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',port=port)
+    app.run(debug=True, host='0.0.0.0', port=port)

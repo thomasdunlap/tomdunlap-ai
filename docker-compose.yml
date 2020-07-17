@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  tomdunlap-ai:
+    container_name: tomdunlap-ai
+    image: tomdunlap-ai:v1
+    ports:
+      - 8080:8080
+      - 8443:8443
+      - 50000:50000
+    volumes:
+      - docker_mnt:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock 
+
+volumes:
+  docker_mnt: 
+    driver: local
+ 

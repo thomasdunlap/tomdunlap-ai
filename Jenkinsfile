@@ -5,7 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+
 		sh 'docker build -t tomdai -f Dockerfile.build . '
+
             }
         }
         stage('Test') {

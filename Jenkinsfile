@@ -17,14 +17,14 @@ pipeline {
 
                   echo 'Testing..'
 	
-		  sh 'flake8 --version'
+		  sh 'flake8'
 		}
 	      }
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying...'
             }
         }
     }

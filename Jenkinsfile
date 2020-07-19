@@ -25,6 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+		sh 'make run'
 		sh 'curl http://localhost:5000'
             }
         }

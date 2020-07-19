@@ -1,7 +1,7 @@
-version: '3.7'
+version: '3'
 services:
   tomdunlap-ai:
-    container_name: tomdunlap-ai
+    container_name: tomdai
     image: tomdunlap-ai:v1
     ports:
       - 8080:8080
@@ -12,6 +12,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock 
 
 volumes:
-  docker_mnt: 
-    driver: local
- 
+  docker_mnt:
+    external: true 
+  
+

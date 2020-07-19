@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
 
-		sh 'docker build -t tomdai -f Dockerfile.build . '
+		sh 'docker build -t tomdai -f Dockerfile . '
 
             }
         }
@@ -25,6 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+		sh 'curl http://localhost:5000'
             }
         }
     }

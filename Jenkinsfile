@@ -32,7 +32,7 @@ pipeline {
 	    steps {
 	        echo "API Test"
 		//sh 'curl https://172.22.0.1:5000'
-		sh 'curl http://172.23.0.2:5000'
+		sh 'curl http://172.24.0.1:5000'
 	    }
 	}
     }

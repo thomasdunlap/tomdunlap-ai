@@ -31,7 +31,7 @@ pipeline {
 	stage('API Test') {
 	    steps {
 	        echo "API Test"
-		sh 'curl http://172.22.0.1:5000'
+		sh 'curl https://172.22.0.1:5000'
 	    }
 	}
     }

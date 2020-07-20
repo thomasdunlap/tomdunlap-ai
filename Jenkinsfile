@@ -26,8 +26,13 @@ pipeline {
             steps {
                 echo 'Deploying...'
 		sh 'docker run -d -p 5000:5000 -e PORT=5000 tomdai:latest'
-		sh 'curl http://localhost:5000'
             }
         }
+	stage('API Test') {
+	    steps {
+	        echo "API Test"
+		sh 'curl http://localhost:5000'
+	    }
+	}
     }
 }

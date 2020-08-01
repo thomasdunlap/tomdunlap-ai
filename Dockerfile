@@ -8,4 +8,6 @@ WORKDIR /webapp
 
 RUN pip3 install -r requirements.txt
 
+EXPOSE 8001
+
 CMD gunicorn --bind 0.0.0.0:$PORT wsgi

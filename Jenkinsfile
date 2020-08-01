@@ -31,7 +31,7 @@ pipeline {
 	stage('API Test') {
 	    steps {
 	        echo "API Test"
-		sh 'curl http://0.0.0.0:8001'
+		sh 'if [ $(curl -LI http://172.22.0.1:8001 -o /dev/null -w '%{http_code}\n' -s) == "200" ]; then echo 0; fi'
 		//sh 'curl http://172.24.0.1:5000'
 	    }
 	}

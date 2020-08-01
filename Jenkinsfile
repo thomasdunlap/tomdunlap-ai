@@ -25,13 +25,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-		sh 'docker run -d -p 5555:8080 -e PORT=8080 tomdai:latest'
+		sh 'docker run -d -p 8001:8080 -e PORT=8080 tomdai:latest'
             }
         }
 	stage('API Test') {
 	    steps {
 	        echo "API Test"
-		sh 'curl https://0.0.0.0:5555'
+		sh 'curl https://127.0.0.1:8001'
 		//sh 'curl http://172.24.0.1:5000'
 	    }
 	}

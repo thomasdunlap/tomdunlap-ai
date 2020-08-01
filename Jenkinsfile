@@ -25,14 +25,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-		sh 'chmod 777 /var/run/docker.sock'
-		sh 'docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 127.0.0.1:8001:8080 -e PORT=8080 tomdai:latest'
+		sh 'docker run -d -p 8001:8080 -e PORT=8080 tomdai:latest'
             }
         }
 	stage('API Test') {
 	    steps {
 	        echo "API Test"
-		sh 'curl https://127.0.0.1:8001'
+		sh 'docker exec tomdai:latest curl https://0.0.0.0:8001'
 		//sh 'curl http://172.24.0.1:5000'
 	    }
 	}

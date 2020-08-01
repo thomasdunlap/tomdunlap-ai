@@ -31,7 +31,7 @@ pipeline {
 	stage('API Test') {
 	    steps {
 	        echo "API Test"
-		sh 'docker exec tomdai:latest curl https://0.0.0.0:8001'
+		sh 'curl http://0.0.0.0:8001'
 		//sh 'curl http://172.24.0.1:5000'
 	    }
 	}

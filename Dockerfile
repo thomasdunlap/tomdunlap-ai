@@ -1,5 +1,6 @@
 from ubuntu:latest
 
+USER root
 RUN apt-get update -y
 RUN apt-get install -y build-essential python3 python3-pip
 
@@ -8,6 +9,6 @@ WORKDIR /webapp
 
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8001
+EXPOSE $PORT
 
 CMD gunicorn --bind 0.0.0.0:$PORT wsgi

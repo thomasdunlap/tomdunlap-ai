@@ -25,6 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+		sh 'chmod 777 /var/run/docker.sock'
 		sh 'docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 127.0.0.1:8001:8080 -e PORT=8080 tomdai:latest'
             }
         }

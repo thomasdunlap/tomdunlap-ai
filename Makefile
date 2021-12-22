@@ -14,5 +14,8 @@ lint:
 run:
 	docker run -p 5000:5000 -e PORT=5000 tomdai:latest
 
-build:
-	docker build .
+build_dev:
+	docker build -t tomdaibase -f Dockerfile.base .
+
+build_prod:
+	docker build -t tomdai -f Dockerfile.prod .
